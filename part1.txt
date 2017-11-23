@@ -1,0 +1,28 @@
+1.
+Artist.where("name ILIKE ?", '%queen%') Artist id: 51
+Album.where(artist_id: 51)
+
+2.
+MediaType.find_by(name: "Protected MPEG-4 video file") id: 3
+Track.where(media_type_id: 3).size  214
+
+3.
+Genre.find_by(name: "Hip Hop/Rap") 17
+
+4.
+Track.where(genre_id: 17).size  35
+
+5.
+Track.sum(:milliseconds)
+
+6.7.
+Track.where(media_type_id: 1).order(unit_price: :desc).limit(1)
+
+8.
+Artist.order(created_at: :desc).limit(2)
+
+9.
+Track.where(genre_id: 15).order(unit_price: :asc).limit(1)
+
+10.
+Track.where(genre_id: 15).where(media_type_id: 1)
